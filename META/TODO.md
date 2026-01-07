@@ -2,35 +2,35 @@
 
 ## Progress
 - **Total**: 99 tasks
-- **Completed**: 4
-- **Current**: 005. Commit: docs: rename QuickCapture to Noca
+- **Completed**: 18
+- **Current**: 019. 创建 src/shared/types.ts (Capture, CaptureType)
 
 ---
 
-## M0: 文档更新
+## M0: 文档更新 ✅
 
 - [x] 001. 更新 PRODUCT.md 中 QuickCapture → Noca
 - [x] 002. 更新 TECHNICAL.md 中 QuickCapture → Noca
 - [x] 003. 更新 CORE/META.md 中 QuickCapture → Noca
 - [x] 004. 更新所有文档中 ~/quickcapture/ → ~/noca/
-- [ ] 005. Commit: docs: rename QuickCapture to Noca
+- [x] 005. Commit: docs: rename QuickCapture to Noca
 
 ---
 
-## M1: 项目初始化
+## M1: 项目初始化 ✅
 
-- [ ] 006. 创建目录: src/shared/, src/storage/, src/processor/, src/notion/
-- [ ] 007. 创建目录: scripts/, tests/, config/
-- [ ] 008. 初始化 package.json (name: noca, type: module)
-- [ ] 009. 安装 devDependencies: typescript, vitest, @types/node, eslint
-- [ ] 010. 创建 tsconfig.json
-- [ ] 011. 创建 vitest.config.ts
-- [ ] 012. 创建 .eslintrc.json
-- [ ] 013. 更新 .gitignore: node_modules, dist, .env, *.log
-- [ ] 014. 创建 .env.example
-- [ ] 015. 添加 npm scripts: build, test, lint
-- [ ] 016. 验证: npm install 成功
-- [ ] 017. 验证: npm run build 成功
+- [x] 006. 创建目录: src/shared/, src/storage/, src/processor/, src/notion/
+- [x] 007. 创建目录: scripts/, tests/, config/
+- [x] 008. 初始化 package.json (name: noca, type: module)
+- [x] 009. 安装 devDependencies: typescript, vitest, @types/node, eslint
+- [x] 010. 创建 tsconfig.json
+- [x] 011. 创建 vitest.config.ts
+- [x] 012. 创建 .eslintrc.json
+- [x] 013. 更新 .gitignore: node_modules, dist, .env, *.log
+- [x] 014. 创建 .env.example
+- [x] 015. 添加 npm scripts: build, test, lint
+- [x] 016. 验证: npm install 成功
+- [x] 017. 验证: npm run build 成功
 - [ ] 018. Commit: feat: initialize project structure
 
 ---
