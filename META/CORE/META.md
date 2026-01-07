@@ -16,7 +16,7 @@ Core documentation defining **what** we're building and **how** we work.
 
 ## Quick Reference
 
-**PRODUCT.md** - Start here. Defines what QuickCapture does, user workflows, V1 scope, and design principles.
+**PRODUCT.md** - Start here. Defines what Noca does, user workflows, V1 scope, and design principles.
 
 **REGULATION.md** - Development standards: atomic code, testing practices, documentation, code style, cleanup rules.
 

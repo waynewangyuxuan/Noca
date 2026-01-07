@@ -1,4 +1,4 @@
-# QuickCapture 技术文档
+# Noca 技术文档
 
 ## 架构
 
@@ -17,7 +17,7 @@
 ## 目录结构
 
 ```
-~/quickcapture/
+~/noca/
 ├── captures/                # 每日数据
 │   └── 2026-01-06.json
 ├── processed/               # 处理后输出
@@ -39,15 +39,15 @@ npm install -g @raycast/api
 # 创建扩展
 cd ~/Developer
 npx create-raycast-extension --type form
-# 名字：quickcapture
+# 名字：noca
 ```
 
 ### package.json
 
 ```json
 {
-  "name": "quickcapture",
-  "title": "Quick Capture",
+  "name": "noca",
+  "title": "Noca",
   "description": "Capture anything to Notion",
   "icon": "icon.png",
   "author": "you",
@@ -55,7 +55,7 @@ npx create-raycast-extension --type form
   "commands": [
     {
       "name": "capture",
-      "title": "Quick Capture",
+      "title": "Noca Capture",
       "description": "Capture clipboard content with optional note",
       "mode": "view"
     }
@@ -87,7 +87,7 @@ import { execSync } from "child_process";
 import * as fs from "fs";
 import * as path from "path";
 
-const CAPTURE_DIR = path.join(process.env.HOME || "", "quickcapture/captures");
+const CAPTURE_DIR = path.join(process.env.HOME || "", "noca/captures");
 
 export default function Command() {
   const [content, setContent] = useState("");
@@ -190,7 +190,7 @@ export default function Command() {
 ### 安装扩展
 
 ```bash
-cd ~/Developer/quickcapture
+cd ~/Developer/noca
 npm install
 npm run dev  # 开发模式，Raycast 会自动加载
 ```
@@ -201,7 +201,7 @@ npm run dev  # 开发模式，Raycast 会自动加载
 
 ### 数据格式
 
-**~/quickcapture/captures/2026-01-06.json**
+**~/noca/captures/2026-01-06.json**
 
 ```json
 [
@@ -222,7 +222,7 @@ npm run dev  # 开发模式，Raycast 会自动加载
 
 ### 配置文件
 
-**~/quickcapture/config.json**
+**~/noca/config.json**
 
 ```json
 {
@@ -239,7 +239,7 @@ npm run dev  # 开发模式，Raycast 会自动加载
 
 ### prompt.md
 
-**~/quickcapture/prompt.md**
+**~/noca/prompt.md**
 
 ```markdown
 你是一个帮我整理每日信息的助手。
@@ -279,10 +279,10 @@ JSON 数组，每个 item 有：
 
 ```bash
 # 添加到 ~/.zshrc 或 ~/.bashrc
-alias qc-process='~/quickcapture/process.sh'
+alias qc-process='~/noca/process.sh'
 ```
 
-**~/quickcapture/process.sh**
+**~/noca/process.sh**
 
 ```bash
 #!/bin/bash
@@ -369,7 +369,7 @@ PYTHON
 ```
 
 ```bash
-chmod +x ~/quickcapture/process.sh
+chmod +x ~/noca/process.sh
 ```
 
 ---
@@ -379,13 +379,13 @@ chmod +x ~/quickcapture/process.sh
 ### Step 1: 创建目录
 
 ```bash
-mkdir -p ~/quickcapture/{captures,processed}
+mkdir -p ~/noca/{captures,processed}
 ```
 
 ### Step 2: 配置文件
 
 ```bash
-cat > ~/quickcapture/config.json << 'EOF'
+cat > ~/noca/config.json << 'EOF'
 {
   "notion": {
     "token": "YOUR_NOTION_TOKEN",
@@ -398,7 +398,7 @@ EOF
 ### Step 3: Prompt 文件
 
 ```bash
-cat > ~/quickcapture/prompt.md << 'EOF'
+cat > ~/noca/prompt.md << 'EOF'
 你是一个帮我整理每日信息的助手。
 
 ## 输入
@@ -452,7 +452,7 @@ npm run dev
 
 ### Step 7: 设置快捷键
 
-Raycast → Extensions → Quick Capture → 设置快捷键（如 ⌘+Shift+C）
+Raycast → Extensions → Noca → 设置快捷键（如 ⌘+Shift+C）
 
 ---
 

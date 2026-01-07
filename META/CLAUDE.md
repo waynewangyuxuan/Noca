@@ -54,25 +54,44 @@ META/
 
 ---
 
+## TODO-Driven Development
+
+本项目采用 TODO 驱动开发模式：
+
+1. **所有任务**在 [TODO.md](TODO.md) 中按顺序编号 (001-099)
+2. **一个一个完成**，不跳过
+3. **每完成一个**立即标记 `[x]`
+4. **完成一个 Milestone 后** commit
+
+### 当前状态
+
+查看 [TODO.md](TODO.md) 的 Progress 部分获取：
+- Total: 总任务数
+- Completed: 已完成数
+- Current: 当前正在执行的任务
+
+---
+
 ## Development Workflow
 
 ### Before Coding
 
-1. Read relevant CORE/ docs to understand context
-2. Check current MILESTONE for scope
-3. Review related ISSUEs if any
+1. 查看 TODO.md 的 Current 任务
+2. 阅读相关 CORE/ 文档理解上下文
+3. 检查相关 ISSUE（如有）
 
 ### During Development
 
-1. Follow REGULATION.md principles (atomic code, testing, etc.)
-2. One feature/fix per commit
-3. If blocked by a design decision → create ISSUE file
+1. 按 TODO 顺序执行任务
+2. 遵循 REGULATION.md 原则
+3. 遇到设计决策问题 → 创建 ISSUE
 
 ### After Completing a Task
 
-1. Update PROGRESS.md with what was done
-2. Update TODO.md if new tasks discovered
-3. If issue resolved → note resolution in ISSUE file
+1. 在 TODO.md 中标记 `[x]`
+2. 更新 Progress 中的 Completed 计数
+3. 更新 Current 为下一个任务
+4. Milestone 结束时更新 PROGRESS.md
 
 ### Creating Documentation
 
@@ -80,7 +99,7 @@ META/
 |------|----------|--------|
 | Issue | ISSUE/ | `{Milestone}_{Summary}_{Date}.md` |
 | Progress | PROGRESS.md | Append with date header |
-| TODO | TODO.md | Append with date header |
+| TODO | TODO.md | 按编号更新状态 |
 
 ### Git Conventions
 
