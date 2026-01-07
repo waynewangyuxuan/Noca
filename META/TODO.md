@@ -2,8 +2,8 @@
 
 ## Progress
 - **Total**: 99 tasks
-- **Completed**: 52
-- **Current**: 053. 创建 config/prompt.md (AI 分类规则)
+- **Completed**: 69
+- **Current**: 070. 安装 @notionhq/client
 
 ---
 
@@ -79,25 +79,25 @@
 
 ---
 
-## M4: AI 处理模块
+## M4: AI 处理模块 ✅
 
-- [ ] 053. 创建 config/prompt.md (AI 分类规则)
-- [ ] 054. 创建 src/processor/processor.ts 框架
-- [ ] 055. 实现 loadCaptures(date) 方法
-- [ ] 056. 实现 buildPrompt(captures) 方法
-- [ ] 057. 创建 src/processor/claude.ts
-- [ ] 058. 实现 callClaude(prompt) - 调用 claude CLI
-- [ ] 059. 实现 process(date) 完整流程
-- [ ] 060. 创建 src/processor/index.ts (导出)
-- [ ] 061. 创建 scripts/qc-process 可执行脚本
-- [ ] 062. 添加 shebang 和执行权限
-- [ ] 063. 创建 src/processor/processor.test.ts
-- [ ] 064. 编写测试: buildPrompt() 格式正确
-- [ ] 065. 编写测试: process() 输出 Markdown (mock Claude)
-- [ ] 066. 运行测试确保通过
-- [ ] 067. 手动测试: ./scripts/qc-process
-- [ ] 068. 验证: 输出符合预期 Markdown 格式
-- [ ] 069. Commit: feat: implement AI processing module
+- [x] 053. 创建 config/prompt.md (AI 分类规则)
+- [x] 054. 创建 src/processor/processor.ts 框架
+- [x] 055. 实现 loadCaptures(date) 方法
+- [x] 056. 实现 buildPrompt(captures) 方法
+- [x] 057. 创建 src/processor/claude.ts
+- [x] 058. 实现 callClaude(prompt) - 调用 claude CLI
+- [x] 059. 实现 process(date) 完整流程
+- [x] 060. 创建 src/processor/index.ts (导出)
+- [x] 061. 创建 scripts/qc-process 可执行脚本
+- [x] 062. 添加 shebang 和执行权限
+- [x] 063. 创建 src/processor/processor.test.ts
+- [x] 064. 编写测试: buildPrompt() 格式正确
+- [x] 065. 编写测试: process() 输出 Markdown (mock Claude)
+- [x] 066. 运行测试确保通过
+- [x] 067. 手动测试: ./scripts/qc-process
+- [x] 068. 验证: 输出符合预期 Markdown 格式
+- [x] 069. Commit: feat: implement AI processing module
 
 ---
 

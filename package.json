@@ -7,7 +7,9 @@
     "build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "process": "./scripts/qc-process",
+    "process:today": "./scripts/qc-process"
   },
   "keywords": [
     "capture",

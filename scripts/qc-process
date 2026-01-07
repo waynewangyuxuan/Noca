@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Noca Processor CLI
+# Usage: ./scripts/qc-process [date] [--push]
+# Example: ./scripts/qc-process 2024-01-15 --push
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+
+# Run the compiled TypeScript
+node "$PROJECT_DIR/dist/processor/cli.js" "$@"
