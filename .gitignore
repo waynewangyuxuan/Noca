@@ -30,3 +30,8 @@ coverage/
 
 # Local config (contains secrets)
 config/config.json
+config.json
+
+# User data
+captures/
+processed/

@@ -12,6 +12,12 @@
       "title": "Noca Capture",
       "description": "Capture clipboard content with optional note",
       "mode": "view"
+    },
+    {
+      "name": "view-captures",
+      "title": "Noca Today",
+      "description": "View today's captures",
+      "mode": "view"
     }
   ],
   "dependencies": {
