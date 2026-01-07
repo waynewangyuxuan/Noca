@@ -1,4 +1,3 @@
 // Noca shared types and utilities
-// Will be populated in M2
 
-export {};
+export type { Capture, CaptureType, DailyCaptures } from './types.js';

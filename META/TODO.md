@@ -2,8 +2,8 @@
 
 ## Progress
 - **Total**: 99 tasks
-- **Completed**: 18
-- **Current**: 019. 创建 src/shared/types.ts (Capture, CaptureType)
+- **Completed**: 33
+- **Current**: 034. 创建 src/raycast/ 目录结构
 
 ---
 
@@ -31,26 +31,26 @@
 - [x] 015. 添加 npm scripts: build, test, lint
 - [x] 016. 验证: npm install 成功
 - [x] 017. 验证: npm run build 成功
-- [ ] 018. Commit: feat: initialize project structure
+- [x] 018. Commit: feat: initialize project structure
 
 ---
 
-## M2: 存储模块
+## M2: 存储模块 ✅
 
-- [ ] 019. 创建 src/shared/types.ts (Capture, CaptureType)
-- [ ] 020. 创建 src/shared/index.ts (导出)
-- [ ] 021. 创建 src/storage/storage.ts (CaptureStorage 类框架)
-- [ ] 022. 实现 getStoragePath(date) 方法
-- [ ] 023. 实现 save(capture) 方法
-- [ ] 024. 实现 loadByDate(date) 方法
-- [ ] 025. 实现 loadToday() 方法
-- [ ] 026. 创建 src/storage/index.ts (导出)
-- [ ] 027. 创建 src/storage/storage.test.ts
-- [ ] 028. 编写测试: save() 正确写入 JSON
-- [ ] 029. 编写测试: loadByDate() 正确读取
-- [ ] 030. 编写测试: loadToday() 返回今日数据
-- [ ] 031. 编写测试: 空文件返回空数组
-- [ ] 032. 运行测试确保全部通过
+- [x] 019. 创建 src/shared/types.ts (Capture, CaptureType)
+- [x] 020. 创建 src/shared/index.ts (导出)
+- [x] 021. 创建 src/storage/storage.ts (CaptureStorage 类框架)
+- [x] 022. 实现 getStoragePath(date) 方法
+- [x] 023. 实现 save(capture) 方法
+- [x] 024. 实现 loadByDate(date) 方法
+- [x] 025. 实现 loadToday() 方法
+- [x] 026. 创建 src/storage/index.ts (导出)
+- [x] 027. 创建 src/storage/storage.test.ts
+- [x] 028. 编写测试: save() 正确写入 JSON
+- [x] 029. 编写测试: loadByDate() 正确读取
+- [x] 030. 编写测试: loadToday() 返回今日数据
+- [x] 031. 编写测试: 空文件返回空数组
+- [x] 032. 运行测试确保全部通过
 - [ ] 033. Commit: feat: implement capture storage module
 
 ---
