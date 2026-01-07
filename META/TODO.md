@@ -2,8 +2,8 @@
 
 ## Progress
 - **Total**: 99 tasks
-- **Completed**: 69
-- **Current**: 070. 安装 @notionhq/client
+- **Completed**: 88
+- **Current**: 089. 创建 tests/e2e.sh 测试脚本
 
 ---
 
@@ -101,27 +101,27 @@
 
 ---
 
-## M5: Notion 集成
+## M5: Notion 集成 ✅
 
-- [ ] 070. 安装 @notionhq/client
-- [ ] 071. 创建 config/config.example.json 模板
-- [ ] 072. 创建 src/shared/config.ts (配置加载)
-- [ ] 073. 创建 src/notion/client.ts 框架
-- [ ] 074. 实现 connect() 验证连接
-- [ ] 075. 创建 src/notion/blocks.ts
-- [ ] 076. 实现 markdownToBlocks() 转换
-- [ ] 077. 实现 appendContent(content) 方法
-- [ ] 078. 创建 src/notion/index.ts (导出)
-- [ ] 079. 更新 scripts/qc-process 添加 --push 选项
-- [ ] 080. 引导用户配置 Notion Integration
-- [ ] 081. 创建 ~/noca/config.json (用户配置)
-- [ ] 082. 创建 src/notion/client.test.ts
-- [ ] 083. 编写测试: connect() 成功连接
-- [ ] 084. 编写测试: appendContent() 正确追加
-- [ ] 085. 运行集成测试
-- [ ] 086. 手动测试: qc-process --push
-- [ ] 087. 验证: 内容出现在 Notion 页面
-- [ ] 088. Commit: feat: implement notion integration
+- [x] 070. 安装 @notionhq/client
+- [x] 071. 创建 config/config.example.json 模板
+- [x] 072. 创建 src/shared/config.ts (配置加载)
+- [x] 073. 创建 src/notion/client.ts 框架
+- [x] 074. 实现 connect() 验证连接
+- [x] 075. 创建 src/notion/blocks.ts
+- [x] 076. 实现 markdownToBlocks() 转换
+- [x] 077. 实现 appendContent(content) 方法
+- [x] 078. 创建 src/notion/index.ts (导出)
+- [x] 079. 更新 scripts/qc-process 添加 --push 选项
+- [x] 080. 引导用户配置 Notion Integration
+- [x] 081. 创建 ~/noca/config.json (用户配置)
+- [x] 082. 创建 src/notion/client.test.ts
+- [x] 083. 编写测试: connect() 成功连接
+- [x] 084. 编写测试: appendContent() 正确追加
+- [x] 085. 运行集成测试
+- [x] 086. 手动测试: qc-process --push
+- [x] 087. 验证: 内容出现在 Notion 页面
+- [x] 088. Commit: feat: implement notion integration
 
 ---
 

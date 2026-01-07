@@ -1,0 +1,9 @@
+{
+  "notion": {
+    "token": "secret_your_integration_token_here",
+    "pageId": "your_page_id_here"
+  },
+  "storage": {
+    "path": "~/noca"
+  }
+}
