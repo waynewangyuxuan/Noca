@@ -82,12 +82,10 @@ META/
 | Progress | PROGRESS.md | Append with date header |
 | TODO | TODO.md | Append with date header |
 
-### Commit Message Format
+### Git Conventions
 
-```
-{type}: {summary}
-
-{body if needed}
-```
-
-Types: `feat`, `fix`, `refactor`, `docs`, `test`, `chore`
+See [.github/CONTRIBUTING.md](../.github/CONTRIBUTING.md) for full details on:
+- Branching strategy
+- Commit message format
+- Pull request process
+- Issue workflow
