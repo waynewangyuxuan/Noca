@@ -1,7 +1,10 @@
 import { Client } from '@notionhq/client';
 import type { BlockObjectRequest } from '@notionhq/client/build/src/api-endpoints.js';
 import { loadConfig, isNotionConfigured } from '../shared/config.js';
+import { getLogger } from '../shared/logger.js';
 import { markdownToBlocks } from './blocks.js';
+
+const logger = getLogger();
 
 /**
  * Notion client wrapper for Noca
@@ -49,12 +52,13 @@ export class NotionClient {
    */
   async appendContent(markdown: string): Promise<boolean> {
     if (!this.client || !this.pageId) {
-      console.error('Notion not configured');
+      logger.error('Notion not configured');
       return false;
     }
 
     try {
       const blocks = markdownToBlocks(markdown);
+      logger.info(`Pushing ${blocks.length} blocks to Notion`);
 
       // Add date divider at the start
       const dateBlock: BlockObjectRequest = {
@@ -70,7 +74,8 @@ export class NotionClient {
 
       return true;
     } catch (error) {
-      console.error('Failed to append content to Notion:', error instanceof Error ? error.message : error);
+      const errorMsg = error instanceof Error ? error.message : String(error);
+      logger.error(`Failed to append content to Notion: ${errorMsg}`);
       return false;
     }
   }

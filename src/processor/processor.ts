@@ -2,8 +2,11 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as os from 'node:os';
 import type { Capture } from '../shared/types.js';
+import { getLogger } from '../shared/logger.js';
 import { CaptureStorage } from '../storage/storage.js';
 import { callClaudeWithInput } from './claude.js';
+
+const logger = getLogger();
 
 /**
  * AI Processor for organizing daily captures
@@ -64,26 +67,31 @@ ${capturesJson}`;
    */
   async process(date?: string): Promise<string> {
     const targetDate = date || this.getToday();
+    logger.info(`Processing date: ${targetDate}`);
+
     const captures = this.loadCaptures(targetDate);
 
     if (captures.length === 0) {
+      logger.info(`No captures found for ${targetDate}`);
       return `No captures for ${targetDate}`;
     }
 
-    console.log(`Processing ${captures.length} captures for ${targetDate}...`);
+    logger.info(`Loaded ${captures.length} captures`);
 
     const prompt = this.buildPrompt(captures, targetDate);
     const capturesJson = JSON.stringify(captures, null, 2);
 
     // Call Claude with the prompt and captures
+    logger.info('Calling Claude AI for processing...');
     const result = await callClaudeWithInput(prompt, capturesJson);
+    logger.info('AI processing completed');
 
     // Save the result
     this.ensureOutputDir();
     const outputPath = path.join(this.outputDir, `${targetDate}.md`);
     fs.writeFileSync(outputPath, result);
 
-    console.log(`Output saved to: ${outputPath}`);
+    logger.info(`Saved to: ${outputPath}`);
     return result;
   }
 

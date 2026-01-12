@@ -7,5 +7,13 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
+# Use absolute path to node for launchd compatibility
+NODE_PATH="/opt/homebrew/bin/node"
+
+# Fallback to PATH node if homebrew node not found
+if [ ! -x "$NODE_PATH" ]; then
+    NODE_PATH="node"
+fi
+
 # Run the compiled TypeScript
-node "$PROJECT_DIR/dist/processor/cli.js" "$@"
+"$NODE_PATH" "$PROJECT_DIR/dist/processor/cli.js" "$@"

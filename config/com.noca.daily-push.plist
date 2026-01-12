@@ -8,7 +8,7 @@
     <array>
         <string>/bin/bash</string>
         <string>-c</string>
-        <string>cd ~/noca &amp;&amp; ./scripts/qc-process --push</string>
+        <string>cd ~/noca &amp;&amp; ./scripts/qc-process $(date -v-1d +%Y-%m-%d) --push</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>

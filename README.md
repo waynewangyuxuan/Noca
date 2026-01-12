@@ -113,6 +113,23 @@ Captures are stored in `~/noca/captures/{YYYY-MM-DD}.json`
 ./scripts/qc-process --help
 ```
 
+### Automatic Daily Processing
+
+Noca includes a scheduler that automatically processes yesterday's captures at 8:00 AM daily.
+
+```bash
+# Install scheduler
+./scripts/install-scheduler.sh
+
+# Check status
+launchctl list | grep noca
+
+# View logs
+cat ~/noca/logs/$(date +%Y-%m-%d).log
+```
+
+**Schedule logic:** A "day" is defined as 8:00 AM to 8:00 AM next day. So at 8:00 AM on Jan 12, captures from Jan 11 (8 AM Jan 11 - 8 AM Jan 12) are processed.
+
 ### Output Format
 
 AI organizes captures into three categories:
