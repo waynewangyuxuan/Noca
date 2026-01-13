@@ -233,6 +233,82 @@ export function markdownToBlocks(markdown: string): BlockObjectRequest[] {
       continue;
     }
 
+    // Toggle/Details block: <details><summary>title</summary>content</details>
+    if (line.includes('<details>') || line.includes('<summary>')) {
+      // Find the summary text
+      let summaryText = '';
+      let contentLines: string[] = [];
+      let foundDetails = false;
+      let foundSummary = false;
+      let foundEndDetails = false;
+
+      // Parse multi-line details block
+      while (i < lines.length && !foundEndDetails) {
+        const currentLine = lines[i];
+
+        if (currentLine.includes('<details>')) {
+          foundDetails = true;
+        }
+
+        // Extract summary
+        const summaryMatch = currentLine.match(/<summary>(.+?)<\/summary>/);
+        if (summaryMatch) {
+          summaryText = summaryMatch[1];
+          foundSummary = true;
+          // Check if there's content after </summary> on the same line
+          const afterSummary = currentLine.split('</summary>')[1];
+          if (afterSummary && !afterSummary.includes('</details>')) {
+            contentLines.push(afterSummary.trim());
+          }
+        } else if (foundSummary && !currentLine.includes('</details>')) {
+          // Content lines between summary and end
+          if (!currentLine.includes('<details>') && !currentLine.includes('<summary>')) {
+            contentLines.push(currentLine);
+          }
+        }
+
+        if (currentLine.includes('</details>')) {
+          foundEndDetails = true;
+          // Check if there's content before </details> on the same line
+          const beforeEnd = currentLine.split('</details>')[0];
+          if (beforeEnd && !beforeEnd.includes('<summary>') && !beforeEnd.includes('<details>')) {
+            contentLines.push(beforeEnd.trim());
+          }
+        }
+
+        i++;
+      }
+
+      // Create toggle block with children
+      const childBlocks: BlockObjectRequest[] = [];
+      for (const contentLine of contentLines) {
+        if (contentLine.trim()) {
+          childBlocks.push({
+            object: 'block',
+            type: 'paragraph',
+            paragraph: {
+              rich_text: parseInlineMarkdown(contentLine.trim()) as any,
+            },
+          });
+        }
+      }
+
+      blocks.push({
+        object: 'block',
+        type: 'toggle',
+        toggle: {
+          rich_text: parseInlineMarkdown(summaryText || 'Details') as any,
+          children: childBlocks.length > 0 ? childBlocks : [{
+            object: 'block',
+            type: 'paragraph',
+            paragraph: { rich_text: [{ type: 'text', text: { content: '' } }] },
+          }],
+        },
+      } as BlockObjectRequest);
+
+      continue;
+    }
+
     // Default: paragraph
     blocks.push({
       object: 'block',

@@ -10,9 +10,13 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 # Set PATH for launchd compatibility (claude CLI needs node in PATH)
 export PATH="/opt/homebrew/bin:$PATH"
 
-# Load .env for CLAUDE_PATH
+# Load .env for CLAUDE_PATH (only simple key=value lines)
 if [ -f "$PROJECT_DIR/.env" ]; then
-    export $(grep -v '^#' "$PROJECT_DIR/.env" | xargs)
+    while IFS='=' read -r key value; do
+        if [[ ! "$key" =~ ^# ]] && [[ -n "$key" ]]; then
+            export "$key=$value"
+        fi
+    done < "$PROJECT_DIR/.env"
 fi
 
 # Run the compiled TypeScript
