@@ -52,8 +52,9 @@ export default function Command() {
         fs.mkdirSync(CAPTURE_DIR, { recursive: true });
       }
 
-      // Today's file
-      const today = new Date().toISOString().split("T")[0];
+      // Today's file (use local date, not UTC)
+      const d = new Date();
+      const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
       const filePath = path.join(CAPTURE_DIR, `${today}.json`);
 
       // Load existing captures
