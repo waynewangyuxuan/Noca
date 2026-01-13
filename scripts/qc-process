@@ -7,13 +7,13 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-# Use absolute path to node for launchd compatibility
-NODE_PATH="/opt/homebrew/bin/node"
+# Set PATH for launchd compatibility (claude CLI needs node in PATH)
+export PATH="/opt/homebrew/bin:$PATH"
 
-# Fallback to PATH node if homebrew node not found
-if [ ! -x "$NODE_PATH" ]; then
-    NODE_PATH="node"
+# Load .env for CLAUDE_PATH
+if [ -f "$PROJECT_DIR/.env" ]; then
+    export $(grep -v '^#' "$PROJECT_DIR/.env" | xargs)
 fi
 
 # Run the compiled TypeScript
-"$NODE_PATH" "$PROJECT_DIR/dist/processor/cli.js" "$@"
+node "$PROJECT_DIR/dist/processor/cli.js" "$@"
